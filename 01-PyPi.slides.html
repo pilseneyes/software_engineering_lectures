@@ -11913,6 +11913,15 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://github.com/pilseneyes/software_engineering_lectures">https://github.com/pilseneyes/software_engineering_lectures</a></p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Python package</li>
 <li>Distribution system PyPi</li>
@@ -11937,7 +11946,365 @@ a.anchor-link {
 
 </div>
 </div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Local-python-package">Local python package<a class="anchor-link" href="#Local-python-package">&#182;</a></h1><p>Check: <a href="https://python-packaging.readthedocs.io/en/latest/minimal.html">https://python-packaging.readthedocs.io/en/latest/minimal.html</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Picking-A-Name">Picking A Name<a class="anchor-link" href="#Picking-A-Name">&#182;</a></h2><ul>
+<li>All lowercase</li>
+<li>Unique on pypi, even if you don’t want to make your package publicly available (you might want to specify it privately as a dependency later)</li>
+<li>Underscore-separated or no word separators at all (don’t use hyphens)</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dry-example">Dry example<a class="anchor-link" href="#Dry-example">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>file <code>__init__.py</code></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">joke</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span><span class="sa">u</span><span class="s1">&#39;Wenn ist das Nunst</span><span class="se">\u00fc</span><span class="s1">ck git und Slotermeyer? Ja! ... &#39;</span>
+            <span class="sa">u</span><span class="s1">&#39;Beiherhund das Oder die Flipperwaldt gersput.&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>funniest/
+    funniest/
+        __init__.py
+    setup.py</code></pre>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>File <code>setup.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;funniest&#39;</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;The funniest joke in the world&#39;</span><span class="p">,</span>
+      <span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://github.com/storborg/funniest&#39;</span><span class="p">,</span>
+      <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Flying Circus&#39;</span><span class="p">,</span>
+      <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;flyingcircus@example.com&#39;</span><span class="p">,</span>
+      <span class="n">license</span><span class="o">=</span><span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;funniest&#39;</span><span class="p">],</span>
+      <span class="n">zip_safe</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Install with python:</p>
+<div class="highlight"><pre><span></span>python setup.py .
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>...or install with <code>pip</code>:</p>
+<div class="highlight"><pre><span></span>pip install .
+</pre></div>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Install discon:</p>
+<div class="highlight"><pre><span></span>pip install discon
+</pre></div>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span>conda create -n swl <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6 pip gitpython
+</pre></div>
+
+</div>
+</div>
+</div>
+</aside></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="nb">cd</span> best_project
+discon init project_name
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span>python setup.py .
+</pre></div>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="PyPi">PyPi<a class="anchor-link" href="#PyPi">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Account on pypi:
+<a href="https://pypi.org/">https://pypi.org/</a></p>
+<p>Test account (periodically pruned)</p>
+<p><a href="https://packaging.python.org/guides/using-testpypi/">https://packaging.python.org/guides/using-testpypi/</a></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>~/.pypirc</code> file:</p>
+
+<pre><code>config
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+repository:https://upload.pypi.org/legacy/
+username:mjirik
+password:87fasd6sdfas000yourpassword0000asdfea654
+
+[testpypi]
+repository:https://test.pypi.org/legacy/
+username:mjirik
+password:87fasd6sdfas000yourpassword0000asdfea654</code></pre>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>python setup.py sdist upload -r pypi</code></pre>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bumpversion">Bumpversion<a class="anchor-link" href="#Bumpversion">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://github.com/peritus/bumpversion">https://github.com/peritus/bumpversion</a></p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Install with conda or pip:</p>
+<div class="highlight"><pre><span></span>pip install bumpversion
+</pre></div>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>File <code>setup.cfg</code> in project directory</p>
+
+<pre><code>[bumpversion]
+current_version = 1.1.37
+files = setup.py meta.yaml
+commit = True
+tag = True
+tag_name = {new_version}</code></pre>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>tag</code>, <code>commit</code> and <code>tag_name</code> is git thing</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Usage:</p>
+<div class="highlight"><pre><span></span>bumpversion <span class="o">[</span>options<span class="o">]</span> part <span class="o">[</span>file<span class="o">]</span>
+</pre></div>
+<p><code>part</code> is <code>patch</code> or <code>minor</code> or <code>major</code>. E.g.</p>
+
+<pre><code>bumpversion patch</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Git">Git<a class="anchor-link" href="#Git">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+<p><a href="https://github.com/Rafase282/My-FreeCodeCamp-Code/wiki/Lesson-Save-your-Code-Revisions-Forever-with-Git">https://github.com/Rafase282/My-FreeCodeCamp-Code/wiki/Lesson-Save-your-Code-Revisions-Forever-with-Git</a></p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://nvie.com/img/centr-decentr@2x.png" width="600"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>git clone git@github.com:pilseneyes/software_engineering_lectures.git
+
+git commit 
+git pull
+git push</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://camo.githubusercontent.com/d4de2fdb747fec0d3dc67b1640f37c12f3786f5b/687474703a2f2f6a6c6f72642e75732f6769742d69742f6173736574732f696d67732f72656d6f7465732e706e67" width="600"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Branches">Branches<a class="anchor-link" href="#Branches">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Main-branches">Main branches<a class="anchor-link" href="#Main-branches">&#182;</a></h3><p><img src="http://nvie.com/img/main-branches@2x.png" width="300"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Feature-branches">Feature branches<a class="anchor-link" href="#Feature-branches">&#182;</a></h3><p><img src="http://nvie.com/img/fb@2x.png" width="150"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://nvie.com/img/git-model@2x.png" width="400"></p>
+
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 
